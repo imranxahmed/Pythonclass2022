@@ -66,3 +66,72 @@ Get current time
 timestamp to datetime
 python time module
 Python timesleep()
+
+[Math Module]
+python has a built-in module that performs mathametical operations
+# To import module
+import math
+
+math.ceil() 
+#round a number upward to its nearest integer
+
+math.degrees()
+#Converts an angle from radians to degrees
+
+math.exp()
+#returns a variable (example: E) raised to the power of x(Exponent)
+
+math.fabs()
+#returns absolute value of a number
+
+math.factorial()
+#returns factorial of a number
+
+math.floor()
+#rounds a number down to its nearest integer
+
+math.fmod()
+#returns remainder of x divided by y
+
+math.fsum()
+#returns the sum of all items in (tuple), [lists]
+
+math.gcd()
+returns the greatest common divisor (denomenator) of x,y
+
+math.log()
+#returns natural log of any number
+
+math.pow()
+#returns the value of a raised to power b
+
+math.sqrt()
+returns the sqare root of given number
+
+[Sorting algorithms]
+
+Merge sort
+worst case: O(n*logn)
+ave case: O(n*logn)
+best case: O(n*logn)
+
+[Insertion sort ]
+worst: O(n*n)
+ave: O(n*logn)
+best: O(n*logn)
+
+[Quick sort]
+worst: O(n*n)
+ave: O(n*logn)
+best: O(n*logn)
+
+[Selection Sort]
+Worst: O(n*n)
+ave: O(n*logn)
+Best :O(n*logn)
+
+[Bubble Sort]
+worst: O(n^2)
+ave: o(n*logn)
+best: O(n*logn)
+
