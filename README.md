@@ -1,2 +1,2 @@
 # Pythonclass2022
-Work notes from python class 2022
+#This are working notes from python class done in 2022
