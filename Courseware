@@ -1,0 +1,68 @@
+[Python Introduction]
+keywords and identifiers
+statements & comments
+python idocs
+python variables
+python datatypes
+python type conversion
+python I/O and import
+Python operators
+Python namespace
+
+[Flow Control]
+Python if..else
+Python for loop
+Python while loop
+python break and continue
+python Pass
+
+[Functions]
+Python functions
+Function Arguments
+Python Recursion
+Anonymous Function
+Global, local and Nonlocal
+Python "Global" keyword
+Python Modules
+Python package
+
+[Data Types]
+python Numbers
+python List
+python Tuple
+python String
+python set
+python Dictionary
+
+[Files]
+python file operation
+python dictionary
+python exception
+python exception handling
+python user-defined exception
+
+[Object & Class]
+Python OOP (Object Oriented Programming)
+Python Class
+Python Inheritence
+Multiple inheritence
+Operator Overloading
+
+[Advanced Topics]
+Python iterator
+Python Generator
+Python closure
+python decorators
+python property
+python regex
+python examples
+
+[Date & Time ]
+datetime Module
+datetime.strftime()
+datetime.strptime()
+Current date & time
+Get current time
+timestamp to datetime
+python time module
+Python timesleep()
