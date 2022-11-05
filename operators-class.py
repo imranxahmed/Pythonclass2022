@@ -32,6 +32,18 @@ def math_ops():
     menu += 'base: to return base from a float division \n\n'
     print(menu)
     
+def relation_ops():
+    
+    menu = '\n\n'
+    menu += 'Relational Operators \n'
+    menu += '==:  equal \n'
+    menu += '!=:  Not equal \n'
+    menu += '<:   Less than \n'
+    menu += '>:   greater than \n'
+    menu += '<=:  Less than or equal \n'
+    menu += '>=:  greater than or equal \n'
+    print(menu)
+    
 def maths():
     
     print('These are + - * / // operators', end='\n\n')
@@ -92,6 +104,8 @@ def show_bool():
     menu += 'AND :Conjunction \n OR "Disjunction \n NOT :Negation\n\n'
     print(menu)
     print('Something is True only when both a AND b are True')
+    print('Reference below URL for further reading', end='\n\n')
+    print('https://realpython.com/python-and-operator/')
     
     city1 = input('Enter City1 (rutherford): ')
     state1 = input('Enter State1 (nj): ')
@@ -131,42 +145,66 @@ def show_bool():
         
         print('False turned to True eqal to: {0}'.format(nottest))
         
-
+def show_bitwise():
     
-''' start of Main program '''
+    print('This function still under work', end='\n\n')
+    return
 
-
+def show_relation():
     
-if __name__ == "__main__":
+    print('This function still under work', end='\n\n')
+    relation_ops()
+    return
+
+def show_member():
+    
+    print('This function still under work', end='\n\n')
+    return
+
+def show_identify():
+    
+    print('This function still under work', end='\n\n')
+    return
+
+def show_assign():
+    
+    print('This function still under work', end='\n\n')
+    return
+    
+    
+''' start of Main function '''
+
+
+def main():
     
     try:
         choices()
         operation = input('Select Operator to learn:')
         
-        if operation __eq__  'exit':
+        if operation.__eq__('exit'):
             print('Exiting.. Thnk U')
             sys.exit()
         
         print('U selected {0} Operator:'.format(operation))
-        if operation eq 'math':
+        if operation.__eq__('math'):
             maths()
         
-        elif operation eq 'bool':
+        elif operation.__eq__('bool'):
             show_bool()
                    
-        elif operation eq 'bitwise':
+        elif operation.__eq__('bitwise'):
             show_bitwise()
             
-        elif operation __eq__ 'relation':
+        elif operation.__eq__('relation'):
             show_relation()
             
-        elif operation __eq__ 'member':
+        elif operation.__eq__('member'):
             show_member()
             
-        elif operation __eq__ 'identify':
+        elif operation.__eq__('identify'):
             show_identify()
             
-        elif operation __eq__ 'assignment':
+        elif operation.__eq__('assignment'):
             show_assign()
             
         else:
@@ -177,4 +215,8 @@ if __name__ == "__main__":
         print('\n\tProgram Interrupted')
         print(keyerr)
     
+''' Main program '''
+
+if __name__ == "__main__":
     
+    main()
