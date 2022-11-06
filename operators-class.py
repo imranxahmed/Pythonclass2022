@@ -22,14 +22,17 @@ def choices():
     print(menu)
     
 def math_ops():
-    
+       
     menu = '\n\n'
     menu += 'Math operators \n'
-    menu += 'add : Addition'
+    menu += 'add : Addition \n'
     menu += 'subtract: Negation \n'
     menu += 'multiply: Multiplication \n'
-    menu += 'float: to return a float from division \n'
-    menu += 'base: to return base from a float division \n\n'
+    menu += 'div: to return a float from division \n'
+    menu += 'quotient: to return quotient only from division'
+    menu += 'remainder: to return remainder from division'
+    menu += 'tired: To quit this function\n\n'
+    
     print(menu)
     
 def relation_ops():
@@ -43,59 +46,83 @@ def relation_ops():
     menu += '<=:  Less than or equal \n'
     menu += '>=:  greater than or equal \n'
     print(menu)
+
+def membership_ops():
+    
+    menu = '\n\n'
+    menu += 'Membership Operators \n'
+    menu += 'in: if a string or sequence is found in string, list or sequence \n'
+    menu += 'not in: if a string or seqence is NOT found in a string, list or sequence. \n'
+    print(menu)
     
 def maths():
     
-    print('These are + - * / // operators', end='\n\n')
-    math_ops()
-    math_ask = input('Please Enter Operation: ')
+    while True:
+        print('\n\nThese are + - * / // operators', end='\n\n')
+        math_ops()
+        math_ask = input('Please Enter Operation: ')
+        
+        if math_ask.__eq__('tired'):
+            sys.exit('U r tired of this module. Quitting')
     
-    if math_ask == 'add':
-        print('This is addition Math Operators Review', end='\n\n')
-        num1 = int(input('Enter First Number: '))
-        num2 = int(input('Enter Secnod Number: '))
-        print('num1 Type {0} num2 Type {1}'.format(type(num1), type(num2)))
-        print("The + of {0} and {1} is: {2} ".format(num1, num2, num1 + num2))
+        if math_ask == 'add':
+            print('This is addition Math Operators Review', end='\n\n')
+            num1 = int(input('Enter First Number: '))
+            num2 = int(input('Enter Secnod Number: '))
+            print('num1 Type {0} num2 Type {1}'.format(type(num1), type(num2)))
+            print("The + of {0} and {1} is: {2} ".format(num1, num2, num1 + num2))
+            
+        
+        elif math_ask == 'subtract':
+            
+            print('This is subtract Math Operators Review', end='\n\n')
+            num1 = int(input('Enter First Number: '))
+            num2 = int(input('Enter Secnod Number: '))
+            print('num1 Type {0} num2 Type {1}'.format(type(num1), type(num2)))
+            print("The - of {0} and {1} is: {2} ".format(num1, num2, num1 - num2))
+            
+        elif math_ask == 'multiply':
+            
+            print('This is Multiply Math Operators Review', end='\n\n')
+            num1 = int(input('Enter First Number: '))
+            num2 = int(input('Enter Secnod Number: '))
+            print('num1 Type {0} num2 Type {1}'.format(type(num1), type(num2)))
+            print("The * of {0} and {1} is: {2} ".format(num1, num2, num1 * num2))
+            
+        elif math_ask == 'div':
+            
+            '''Divides the number on its left by the number 
+            on its right and returns a floating point value.'''
+            print('This is float division Math Operators Review', end='\n')
+            num1 = float(input('Enter First Number: '))
+            num2 = float(input('Enter Secnod Number: '))
+            print('num1 Type {0} num2 Type {1}'.format(type(num1), type(num2)))
+            print("The / of {0} and {1} is: {2} ".format(num1, num2, num1 / num2))
+            
+        elif math_ask == 'quotient':
+            
+            '''//: Divides the number on its left by the number on its right, 
+            rounds down the answer, and returns a whole number.'''
+            print('This is round down division Math Operators Review', end='\n')
+            num1 = float(input('Enter First Number: '))
+            num2 = float(input('Enter Secnod Number: '))
+            print('num1 Type {0} num2 Type {1}'.format(num1, num2))
+            print("The // of {0} and {1} is: {2} ".format(num1, num2, num1 // num2))
+            
+        elif math_ask == 'remainder':
+                
+            '''%: Divides the number on its left by the number on its right, 
+            and returns the remainder.'''
+            print('This is remainder Math Operators Review', end='\n')
+            num1 = float(input('Enter First Number: '))
+            num2 = float(input('Enter Secnod Number: '))
+            print('num1 Type {0} num2 Type {1}'.format(num1, num2))
+            print("The % of {0} and {1} is: {2} ".format(num1, num2, num1 % num2))
+   
+        else:
+            
+            return
     
-    elif math_ask == 'subtract':
-        
-        print('This is subtract Math Operators Review', end='\n\n')
-        num1 = int(input('Enter First Number: '))
-        num2 = int(input('Enter Secnod Number: '))
-        print('num1 Type {0} num2 Type {1}'.format(type(num1), type(num2)))
-        print("The - of {0} and {1} is: {2} ".format(num1, num2, num1 - num2))
-        
-    elif math_ask == 'multiply':
-        
-        print('This is Multiply Math Operators Review', end='\n\n')
-        num1 = int(input('Enter First Number: '))
-        num2 = int(input('Enter Secnod Number: '))
-        print('num1 Type {0} num2 Type {1}'.format(type(num1), type(num2)))
-        print("The * of {0} and {1} is: {2} ".format(num1, num2, num1 * num2))
-        
-    elif math_ask == 'float':
-        
-        '''Divides the number on its left by the number 
-        on its right and returns a floating point value.'''
-        print('This is float division Math Operators Review', end='\n')
-        num1 = float(input('Enter First Number: '))
-        num2 = float(input('Enter Secnod Number: '))
-        print('num1 Type {0} num2 Type {1}'.format(type(num1), type(num2)))
-        print("The / of {0} and {1} is: {2} ".format(num1, num2, num1 / num2))
-        
-    elif math_ask == 'roundd':
-        
-        '''//: Divides the number on its left by the number on its right, 
-        rounds down the answer, and returns a whole number.'''
-        print('This is round down division Math Operators Review', end='\n')
-        num1 = float(input('Enter First Number: '))
-        num2 = float(input('Enter Secnod Number: '))
-        print('num1 Type {0} num2 Type {1}'.format(num1, num2))
-        print("The // of {0} and {1} is: {2} ".format(num1, num2, num1 // num2))
-        
-    else:
-        
-        return
 
 def show_bool():
     
@@ -158,8 +185,36 @@ def show_relation():
 
 def show_member():
     
-    print('This function still under work', end='\n\n')
-    return
+    membership_ops()
+    my_list = []
+    
+    while True:
+        
+        
+        names = input('Please add your name (Enter done when finsihed): ')
+        
+        if names.__eq__('done'):
+            print(my_list)
+            break
+        my_list.append(names)
+    
+    while True:      
+        
+        check_name = input('Enter name to check (Type dismiss to exit): ')
+        
+        
+        if check_name.__eq__('dismiss'):
+            break
+            
+        if check_name in my_list:
+            print('Membership test successful')
+            print('Student is present.', end='\n\n')
+                
+        elif check_name not in my_list:
+            
+            print('Membership test failed')
+            print('Student is absent', end='\n\n')
+    return    
 
 def show_identify():
     
@@ -186,6 +241,7 @@ def main():
             sys.exit()
         
         print('U selected {0} Operator:'.format(operation))
+        
         if operation.__eq__('math'):
             maths()
         
