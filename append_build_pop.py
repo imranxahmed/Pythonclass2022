@@ -11,11 +11,14 @@ my_list = []
 def list_ops():
     
     menu = '\n\n'
-    menu += 'append: Append to a list \n'
-    menu += 'pop: pop an item from Top of the list \n'
-    menu += 'select: pop an item at index  \n'
-    menu += 'insert: Insert at Index value \n'
-    print(menu, end='\n')
+    menu += '**** Main Menu **** \n\n'
+    menu += 'Append list: enter       "append"  \n'
+    menu += 'Pop list: Enter          "pop" \n'
+    menu += 'Pop at index: Enter      "select" \n'
+    menu += 'Insert at Index: Enter   "insert" \n'
+    menu += 'Print list: Enter        "list" \n'
+    menu += 'Exit:                    "exit" or \t "quit" \n'
+    print(menu, end='\n\n')
 
 def append_list():
     while True:
@@ -23,14 +26,17 @@ def append_list():
          get_item = input('Enter anything: ')
     
     
-         if get_item == 'exit':
+         if get_item == 'done':
             print('list completed: \n')
-            print(my_list, end='end-of-line\n')
+            print(my_list, end='END-OF-LINE\n')
             break
          else:
             my_list.append(get_item)
     
-def pop_list():    
+def pop_list():  
+    
+    if len(my_list) == 0:
+        print('Ur list is empty. Call append_list() to build one \n')
     while len(my_list) > 0:
         print('startig poping items from the list')
         print('Popping ', my_list.pop())
@@ -46,6 +52,15 @@ def pop_select():
         
         #my_list.pop(pop_item)
         print('Remaining List: {0}'.format(my_list), end='\n\n')
+ 
+def show_list():
+    
+    if len(my_list) == 0:
+        print('Ur list is empty. Call append_list() to build one \n')
+    else:
+        print('The list has {0} elements'.format(len(my_list)))
+        print(my_list)
+        
         
 def insert_list():
     
@@ -61,30 +76,53 @@ def insert_list():
 
 ''' start calling my functions '''
 
-''' start of Main program '''
-
 def main():
     
-    try:
+    while True:
         
-        list_ops()
-        oper = input('Enter Operation: ')
+        try:
+            
+            list_ops()
+            oper = input('Enter Operation: ')
+            
+            if oper.__eq__('exit') or oper.__eq__('quit'):
+                
+                sys.exit(0)
+            
+            elif oper.__eq__('append'):
+                append_list()
+            
+            elif oper.__eq__('pop'):
+                pop_list()
+                
+            elif oper.__eq__('select'):
+                pop_select()
+                
+            elif oper == 'insert':
+                insert_list()
+                
+            elif oper.__eq__('list'):
+                show_list()
+                
+        except (IOError, InterruptedError, TypeError ):
+            sys.exit('Encountered an Error, Exiting.')
+            
+        except SyntaxError as serr:
+            file = serr.filename()
+            line_num = serr.lineno()
+            off_set = serr.offset()
+            src_code = serr.text()
+            print('serr Type: {0}'.format(type(serr)))
+            print('Filename: {0} \n line-no: {1} \n offset: {2} \n source:{3}\n'.format(file, line_num, off_set, src_code))
+            
+            
+            
+            
         
-        if oper.__eq__('append'):
-            append_list()
-        
-        elif oper.__eq__('pop'):
-            pop_list()
-            
-        elif oper.__eq__('select'):
-            pop_select()
-            
-        elif oper == 'insert':
-            insert_list()
-            
-    except (IOError, InterruptedError, TypeError ):
-        sys.exit('Encountered an Error, Exiting.')
-    
+
+''' start of Main program '''
+
+
 if __name__ == "__main__":
     
     main()
