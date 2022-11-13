@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Oct  8 08:25:07 2022
-
 @author: admin
 """
 import sys
@@ -21,6 +20,8 @@ def list_ops():
     print(menu, end='\n\n')
 
 def append_list():
+    
+    print('type "done" to quit append function')
     while True:
     
          get_item = input('Enter anything: ')
@@ -28,7 +29,7 @@ def append_list():
     
          if get_item == 'done':
             print('list completed: \n')
-            print(my_list, end='END-OF-LINE\n')
+            print(my_list, end='\n')
             break
          else:
             my_list.append(get_item)
@@ -44,10 +45,19 @@ def pop_list():
         
 def pop_select():
     
+    if len(my_list) == 0:
+        print('Ur list is empty. Call append_list() to build one \n')
+    
+    print('\n type 100 to quit', end='\n')    
     while len(my_list) > 0:
         pop_item = int(input('what index to remove item from: '))
-        if pop_item.__eq__('exit'):
+        
+        
+        if pop_item.__eq__(100):
+            print('you have chosen to say goodbyes')
             sys.exit()
+            
+        print(my_list[pop_item])
         print('Removing: {0} '.format(my_list.pop(pop_item)))
         
         #my_list.pop(pop_item)
