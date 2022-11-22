@@ -1,0 +1,42 @@
+﻿﻿Secure Erase Report
+
+"Server Serial Number","Initiated By",
+"2M2218013L","hwe",
+
+"Device Type","Location","Serial Number","Status","Erase Type","Start Time","End Time",
+"NVDIMM","Processor 1,DIMM 13","437977088","Success","Purge","11/14/2022 12:30:59","11/14/2022 12:48:20",
+"NVDIMM","Processor 1,DIMM 9","437977088","Success","Purge","11/14/2022 12:30:59","11/14/2022 12:48:25",
+"NVDIMM","Processor 1,DIMM 4","437977088","Success","Purge","11/14/2022 12:30:59","11/14/2022 12:48:30",
+"NVDIMM","Processor 1,DIMM 8","437977088","Success","Purge","11/14/2022 12:30:59","11/14/2022 12:48:35",
+"NVDIMM","Processor 2,DIMM 13","437977088","Success","Purge","11/14/2022 12:30:59","11/14/2022 12:48:40",
+"NVDIMM","Processor 2,DIMM 9","437977088","Success","Purge","11/14/2022 12:30:59","11/14/2022 12:48:45",
+"NVDIMM","Processor 2,DIMM 4","437977088","Success","Purge","11/14/2022 12:30:59","11/14/2022 12:48:50",
+"NVDIMM","Processor 2,DIMM 8","437977088","Success","Purge","11/14/2022 12:30:59","11/14/2022 12:48:55",
+"TPM","N/A","N/A","Success","Clear","11/14/2022 12:52:09","11/14/2022 12:52:09",
+"UEFI Store","N/A","N/A","Success","Purge","11/14/2022 12:52:09","11/14/2022 12:52:09",
+"UEFI Store","N/A","N/A","Success","Purge","11/14/2022 12:52:09","11/14/2022 12:52:09",
+"UEFI Store","N/A","N/A","Success","Purge","11/14/2022 12:52:09","11/14/2022 12:52:09",
+"UEFI Store","N/A","N/A","Success","Purge","11/14/2022 12:52:09","11/14/2022 12:52:09",
+"UEFI Store","N/A","N/A","Success","Purge","11/14/2022 12:52:09","11/14/2022 12:52:17",
+"Smart Storage","Slot 5 Hpe Smart Storage Array Controller Port 1I:3:1","S6CDNA0R900505","Success","Purge","11/14/2022 12:52:08","11/14/2022 12:52:47",
+"Smart Storage","Slot 5 Hpe Smart Storage Array Controller Port 1I:3:2","S6CDNA0R900503","Success","Purge","11/14/2022 12:52:08","11/14/2022 12:52:47",
+"Smart Storage","Slot 5 Hpe Smart Storage Array Controller Port 2I:3:3","S6CDNA0R900481","Success","Purge","11/14/2022 12:52:08","11/14/2022 12:52:47",
+"Smart Storage","Slot 5 Hpe Smart Storage Array Controller Port 2I:3:4","S6CDNA0R900508","Success","Purge","11/14/2022 12:52:08","11/14/2022 12:52:48",
+"Smart Storage","Slot 5 Hpe Smart Storage Array Controller Port 3I:3:5","S5KWNA0R900876","Success","Purge","11/14/2022 12:52:08","11/14/2022 12:52:48",
+"Smart Storage","Slot 5 Hpe Smart Storage Array Controller Port 3I:3:6","S5KWNA0R900871","Success","Purge","11/14/2022 12:52:08","11/14/2022 12:52:48",
+"Smart Storage","Slot 5 Hpe Smart Storage Array Controller Port 4I:3:7","S5KWNA0R900874","Success","Purge","11/14/2022 12:52:08","11/14/2022 12:52:48",
+"Smart Storage","Slot 5 Hpe Smart Storage Array Controller Port 4I:3:8","S5KWNA0R900877","Success","Purge","11/14/2022 12:52:08","11/14/2022 12:52:48",
+"UEFI Store","N/A","N/A","Success","Clear","11/14/2022 12:54:48","11/14/2022 12:55:12",
+"Embedded NAND Flash","N/A","N/A","Success","Purge","11/14/2022 17:00:43","11/14/2022 17:02:45",
+"NVRAM","N/A","N/A","Success","Clear","11/14/2022 17:04:23","11/14/2022 17:04:23",
+
+Following devices are not impacted by secure erase:
+
+ - USB Drives
+ - SD Cards
+ - iLO Virtual Media
+ - HPE Smart Array MR controllers and connected storage
+ - SAS HBA's and connected drives
+ - SATA / SAS / NVM Express drives that do not support native sanitize methods
+ - FCoE / iSCSI storage
+ - GPGPU's / Other FPGA's / accelerators / offload engines that have keys or storage
