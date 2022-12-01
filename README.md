@@ -7,3 +7,4 @@
 <div>#10/31/2022 - Build operators-class.py :: a program to show all Python operators using Unicode for Menus</div>
 <div>#11/3/2022 - Updated append_build_pop.py with Mirza's code Using return from a function</div>
 <div>#11/12/2022 - Updated append_build_pop.py with Unicode characters</div>
+<div>#11/18/2022 - built list-comprehension.py to showcase shortest way to generate lists</div>
