@@ -35,6 +35,6 @@ while True:
         break
     
     except SyntaxError as e:
-        print('Found Syntax Error:'.format(e))
+        print('Found Syntax Error: {0}'.format(e))
         break           
     
