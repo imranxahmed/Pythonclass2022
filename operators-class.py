@@ -10,14 +10,15 @@ import sys
 def choices():
     
     menu = '\n\n'
-    menu += '1:\tMath Operators: Enter (math) \n'
-    menu += '2:\tBoolean Operators: Enter (bool) \n'
-    menu += '3:\tBitwise Operators: Enter (bitwise) \n'
-    menu += '4:\tRelational Operators: Enter (relation) \n'
-    menu += '5:\tMembership Operators: Enter (member) \n'
-    menu += '6:\tIdentity  Operators: Enter (identify) \n'
-    menu += '7:\tAssignment Operators: Enter (assignment) \n'
-    menu += '8:\tExit program: Enter (exit)'
+    menu += '\u2139 \t Using Unicode \u2139\n'
+    menu += '1:\u2588\tMath Operators: Enter (math) \u2588\n'
+    menu += '2:\u2588\tBoolean Operators: Enter (bool) \u2588\n'
+    menu += '3:\u2588\tBitwise Operators: Enter (bitwise) \u2588\n'
+    menu += '4:\u2588\tRelational Operators: Enter (relation) \u2588\n'
+    menu += '5:\u2588\tMembership Operators: Enter (member) \u2588\n'
+    menu += '6:\u2588\tIdentity  Operators: Enter (identity) \u2588\n'
+    menu += '7:\u2588\tAssignment Operators: Enter (assign) \u2588\n'
+    menu += '8:\u2588\tExit program: Enter (exit)'
     menu += '\n\n'
     print(menu)
     
@@ -55,6 +56,10 @@ def identity_ops():
     menu += 'Identity Operators'
     menu += 'is: if both operands have same id \n'
     menu += 'is not: if both operands don\'t have same id \n'
+    menu += 'When you create an integer object where the value is in range (-5,256) AND \
+             string objects greater than or equal to 20 chars, instead \
+             of creating different objects at memory for the same value  \
+             these objects act as a pointer to already created objects.'
     print(menu)
 
 
@@ -272,7 +277,7 @@ def show_member():
 
 def show_identity():
     
-    i
+
     id_1 = input('Enter item1: ')
     id_2 = input('enter item2: ')
     
@@ -319,9 +324,9 @@ def main():
                 show_member()
                 
             elif operation.__eq__('identity'):
-                show_identify()
+                show_identity()
                 
-            elif operation.__eq__('assignment'):
+            elif operation.__eq__('assign'):
                 show_assign()
                 
             else:
