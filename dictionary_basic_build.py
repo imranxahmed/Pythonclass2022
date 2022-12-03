@@ -158,37 +158,40 @@ dozers = {
 
 def dict_menu():
     
-    ditem = '\t Menu \t\n'
-    ditem += '\t We have below dicts defined \t\n'
-    ditem += '\t hassan_family \t\n'
-    ditem += '\t adnan \t\n'
-    ditem += '\t anjum \t\n'
-    ditem += '\t mirza \t\n'
-    ditem += '\t javeed \t\n'
-    ditem += '\t maria \t\n'
-    ditem += '\t maryam \t\n'
-    ditem += '\t razina \t\n'
-    ditem += '\t dozers \t\n'
-    print(ditem)
+    ditem = '\t Menu - Defined dicts\t\n'
+    ditem += '\t (a) hassan_family \t\n'
+    ditem += '\t (b) adnan \t\n'
+    ditem += '\t (c) anjum \t\n'
+    ditem += '\t (d) mirza \t\n'
+    ditem += '\t (e) javeed \t\n'
+    ditem += '\t (f) maria \t\n'
+    ditem += '\t (g) maryam \t\n'
+    ditem += '\t (h) razina \t\n'
+    ditem += '\t (i) dozers \t\n'
+    print(ditem, end='\n\n')
     
-    
-if razina['father'].__eq__('no'):
-    print('No this is NOT possible', end='\n\n')
 
-#I want a dict{'name': 'hero' } for each name,hero in zip(names, heros)
+print('Testing if razina is father or not')    
+if razina['father'].__eq__('no'):
+    print('Correct, razina is not a Father \
+          \nrazina is a Mother', end='\n\n')
+
 
 print('\t\u2588 create dict from two list \u2588')
 print('\t\u2588 Building my_dict dictionary \u2588')
 
-my_dict = {}
+#my_dict = {}
 
-for k,v  in zip(names, heros):
+#for k,v  in zip(names, heros):
     
-    my_dict[k] = v
-    print( my_dict)
+#    my_dict[k] = v
+#    print( my_dict)
 
-#my_dict = { name: hero for name, hero in zip(names, heros) if name != 'Peter'}
-#print my_dict
+#I want a dict{'name': 'hero' } for each name,hero in zip(names, heros)
+
+print('\n\n\tBuiling dict in dict comprehension format\n')
+test_dict = { name: hero for name, hero in zip(names, heros) }
+print(test_dict)
 
 glossary = {
         "mtitle": "example glossary",
@@ -209,6 +212,11 @@ if __name__ == "__main__":
     
     print('\t\u2588 We r learning about dict structure \t\u2588', end='\n\n')
     dict_menu()
+    for dict_keys in hassan_family.keys():
+        print('The KEY in dict {0} is: \u2139{1}\u2139\n'.format('hssan_family', dict_keys), end='\n')
+        print('Attributes of dict KEY {0} are: {1} \n'.format(dict_keys, hassan_family[dict_keys]), end='\n')
+        print('\n\n')
+        
     
     
     
