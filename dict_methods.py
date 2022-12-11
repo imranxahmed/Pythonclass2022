@@ -4,13 +4,16 @@ Created on Thu Dec  8 12:48:13 2022
 @author: admin
 @Objective: dict and its methods
 """
-import os
+import sys, json
 
 test_dict = {
+    
     'name': 'wasil',
     'age': 62,
     'family': 'rathore',
-    'weather': 'smoky',  'gender': 'male'}
+    'weather': 'smoky',  'gender': 'male' 
+    
+    }
 
 hassan_family = {
            'father': { 
@@ -45,63 +48,6 @@ hassan_family = {
               }       
      }
 
-adnan = {
-           'father': 'yes',
-           'name': 'adnan safee',
-           'hobbies': ['rc planes', 'cooking', 'ladoos'],
-           'mood': 'happy',
-           'eyecolor': 'brown',
-           'fav_sports': 'cricket',
-           'like_season': 'summers',
-           'vacation': 'switzerland'           
-    }
-
-
-anjum = {
-           'father': 'no',
-           'mother': 'yes',
-           'name': 'Anjum chaudhary',
-           'hobbies': ['sewing', 'cooking', 'renovation'],
-           'mood': 'happy',
-           'eyecolor': 'brown',
-           'fav_sports': 'basketball',
-           'like_season': ['spring', 'summer'],
-           'vacation': 'hawaii'           
-    }
-
-mirza = {
-           'father': 'no',
-           'name': 'Mirza Mustafa',
-           'hobbies': ['racing', 'coding', 'bunji-jumping', 'hiking'],
-           'mood': 'happy',
-           'eyecolor': 'brown',
-           'fav_sports': 'soccer',
-           'like_season': ['spring', 'summer'],
-           'vacation': 'Turkey'           
-    }
-
-javeed = {
-           'father': 'yes',
-           'name': 'Javeed Syed',
-           'hobbies': ['land scaping', 'coding', 'hiking'],
-           'mood': ['happy', 'calm' ],
-           'eyecolor': 'black',
-           'fav_sports': 'soccer',
-           'like_season': ['spring', 'summer'],
-           'vacation': 'Turkey'           
-    }
-
-maria = {
-           'father': 'no',
-           'mother': 'yes',
-           'name': 'Maria Anjum',
-           'hobbies': ['crafting', 'coding', 'bunji-jumping'],
-           'mood': 'happy',
-           'eyecolor': 'brown',
-           'fav_sports': 'soccer',
-           'like_season': ['fall', 'summer'],
-           'vacation': 'Maldives'           
-    }
 
 maryam = {
            'father': 'no',
@@ -152,34 +98,56 @@ dozers = {
 
 def dict_menu():
     
-    ditem = '\t Menu - Defined dicts\t\n'
-    ditem += '\t (a) hassan_family \t\n'
-    ditem += '\t (b) adnan \t\n'
-    ditem += '\t (c) anjum \t\n'
-    ditem += '\t (d) mirza \t\n'
-    ditem += '\t (e) javeed \t\n'
-    ditem += '\t (f) maria \t\n'
-    ditem += '\t (g) maryam \t\n'
-    ditem += '\t (h) razina \t\n'
-    ditem += '\t (i) dozers \t\n'
+    ditem = '\t\u2139 dozers \t\n'
+
+    ditem += '\t\u2139 dict_by_keys  \t\n'
+    ditem += '\t\u2139 Dict_line -json_dump \t\n'
+    ditem += '\t\u2139 pop_dict_item (i) \t\n'
+    ditem += '\t\u2139 dict get_item (key) \t\n'   
+    ditem += '\t\u2139 dict.clear()  -removes all items from dict\t\n'
+    ditem += '\t\u2139 dict_pop_item (key) - not found KeyError is raised\t\n'
+    ditem += '\t\u2139 '
+    print(ditem, end='\n\n')
+
+def dict_option():
+    
+    ditem = '\t\u2139 Dict-add \t\n'
+    ditem += '\t\u2139 maryam (a) \t\n'
+    ditem += '\t\u2139 (h) razina \t\n'
+    ditem += '\t\u2139 (i) dozers \t\n'
+
     print(ditem, end='\n\n')
     
-
-for item1, item2 in test_dict.items():
-    print('{0} set to --> {1}'.format(item1, item2))
+def check_dict(test_dict):
+    for item1, item2 in test_dict.items():
+        print('{0} set to --> {1}'.format(item1, item2))
     
-print('Testing if razina is father or mother')    
-if razina['father'].__eq__('no'):
+def iterate_keys(choice):
 
-    print('Correct, razina is not a Father \
-          \nrazina is a Mother', end='\n\n')
-
-
-print('\t\u2588 create dict from two list \u2588')
-print('\t\u2588 Building my_dict dictionary \u2588')
-
-print('\n\n\tExample #2 test_dict \t', end='\n')
-print('\tBuiling dict in dict comprehension format\n')
+        if choice == 'dozers':
+            for dict_key in dozers.keys():
+                print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
+                print('KEY {0} value: {1} \n'.format(dict_key, dozers[dict_key]), end='\n')
+    
+        elif choice == 'marym':
+            for dict_key in maryam.keys():
+                print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
+                print('KEY {0} value: {1} \n'.format(dict_key, maryam[dict_key]), end='\n')
+    
+        elif choice == 'hassan_family':
+            for dict_key in hassan_family.keys():
+                print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
+                print('KEY {0} value: {1} \n'.format(dict_key, hassan_family[dict_key]), end='\n')
+        else:
+            print('have NOT selected correct option \n')
+            sys.exit(0)
+            
+def dict_line(dict):
+    ''' this fuction also works with nested dicts '''
+    print(json.dumps(dict, indent=4))
+    
+''' print('\n\n\tExample #2 test_dict \t', end='\n')
+print('\t\u2588Builing dict in dict comprehension format\n') '''
 
 
 glossary = {
@@ -198,58 +166,33 @@ glossary = {
 
    }
 
+'''
+Method dict.items() 
+      It will return both key & value pair
+Method is dict.keys()
+      It will only return keys
+Method is dict.values()
+      It will only return values 
+      
+dict.get(key)   
+dict.clear()  -removes all items from dict
+dict.pop(key) - not found KeyError is raised
+dict.update({'key': 'value'})
+      
+     '''   
+     
 if __name__ == "__main__":
     
     print('\t\u2588 We r learning about dict structure \t\u2588', end='\n\n')
     dict_menu()
-    choice = input('Which dict u want 2 see: ')
     
-    if choice.__eq__('adnan'):
-        for dict_key in adnan.keys():
-            print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-            print('KEY {0} Attribute: {1} \n'.format(dict_key, adnan[dict_key]), end='\n')
+    try:
         
-    elif choice.__eq__('razina'):
-        for dict_key in razina.keys():
-            print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-            print('KEY {0} Attribute: {1} \n'.format(dict_key, razina[dict_key]), end='\n')
-            
-    elif choice == 'anjum':
-        for dict_key in anjum.keys():
-            print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-            print('KEY {0} Attribute: {1} \n'.format(dict_key, anjum[dict_key]), end='\n')
-    
-    elif choice == 'mirza':
-        for dict_key in mirza.keys():
-            print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-            print('KEY {0} Attribute: {1} \n'.format(dict_key, mirza[dict_key]), end='\n')
-
-    elif choice == 'anjum':
-        for dict_key in anjum.keys():
-            print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-            print('KEY {0} Attribute: {1} \n'.format(dict_key, anjum[dict_key]), end='\n')
-       
-    elif choice == 'dozers':
-        for dict_key in dozers.keys():
-            print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-            print('KEY {0} Attribute: {1} \n'.format(dict_key, dozers[dict_key]), end='\n')
-
-    elif choice == 'marym':
-        for dict_key in maryam.keys():
-            print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-            print('KEY {0} Attribute: {1} \n'.format(dict_key, maryam[dict_key]), end='\n')
-
-    elif choice == 'javeed':
-        for dict_key in javeed.keys():
-            print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-            print('KEY {0} Attribute: {1} \n'.format(dict_key, javeed[dict_key]), end='\n')
-
-    elif choice == 'hassan_family':
-        for dict_key in hassan_family.keys():
-            print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-            print('KEY {0} Attribute: {1} \n'.format(dict_key, hassan_family[dict_key]), end='\n')
-    else:
-        print('U have not selected correct option \n')
-        exit(0)
+        pick = input('Which dict u want 2 see: ')
+        option = input('Select option: ')
         
-
+        iterate_keys(pick)
+                    
+    except (NameError,TypeError ) as e:
+        print('Error: {0}'.format(e))
+        
