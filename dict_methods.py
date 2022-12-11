@@ -98,30 +98,48 @@ dozers = {
 
 def dict_menu():
     
-    ditem = '\t\u2139 dozers \t\n'
-
-    ditem += '\t\u2139 dict_by_keys  \t\n'
-    ditem += '\t\u2139 Dict_line -json_dump \t\n'
-    ditem += '\t\u2139 pop_dict_item (i) \t\n'
-    ditem += '\t\u2139 dict get_item (key) \t\n'   
-    ditem += '\t\u2139 dict.clear()  -removes all items from dict\t\n'
-    ditem += '\t\u2139 dict_pop_item (key) - not found KeyError is raised\t\n'
-    ditem += '\t\u2139 '
+    ditem = '\t\u2139 a - dict_by_items \t\n'
+    ditem += '\t\u2139 b - dict_by_keys  \t\n'
+    ditem += '\t\u2139 c - Dict_line -json_dump \t\n'
+    ditem += '\t\u2139 d - pop_dict \t\n'
+    ditem += '\t\u2139 e - dict_get_item (key) \t\n'   
+    ditem += '\t\u2139 f - dict_clear()  -removes all items from dict\t\n'
+    ditem += '\t\u2139 g - dict_pop_item (key) - not found KeyError is raised\t\n'
+    ditem += '\t\u2139 h - dict_search \t\n'
+    ditem += '\t\u2139 E - Exit or Quit \t\n'
     print(ditem, end='\n\n')
 
 def dict_option():
     
-    ditem = '\t\u2139 Dict-add \t\n'
-    ditem += '\t\u2139 maryam (a) \t\n'
-    ditem += '\t\u2139 (h) razina \t\n'
-    ditem += '\t\u2139 (i) dozers \t\n'
-
+    ditem = '\n\t\u2139 1 - hassan_family \t\n'
+    ditem += '\t\u2139 2 - maryam \t\n'
+    ditem += '\t\u2139 3 - razina \t\n'
+    ditem += '\t\u2139 4 - dozers \t\n'
+    ditem += '\t\u2139 5 - test_dict \t\n'
     print(ditem, end='\n\n')
     
-def check_dict(test_dict):
-    for item1, item2 in test_dict.items():
-        print('{0} set to --> {1}'.format(item1, item2))
+def check_dict(choice):
     
+    if choice == 'hassan_family':
+        for item1, item2 in hassan_family.items():
+            print('{0} set to --> {1}'.format(item1, item2))
+    
+    elif choice == 'dozers':
+        for item1, item2 in dozers.items():
+            print('{0} set to --> {1}'.format(item1, item2))
+    
+    elif choice == 'maryam':
+        for item1, item2 in maryam.items():
+            print('{0} set to --> {1}'.format(item1, item2))
+
+    elif choice == 'razina':
+        for item1, item2 in razina.items():
+            print('{0} set to --> {1}'.format(item1, item2))
+
+    elif choice == 'test_dict':
+        for item1, item2 in test_dict.items():
+            print('{0} set to --> {1}'.format(item1, item2))
+
 def iterate_keys(choice):
 
         if choice == 'dozers':
@@ -138,6 +156,18 @@ def iterate_keys(choice):
             for dict_key in hassan_family.keys():
                 print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
                 print('KEY {0} value: {1} \n'.format(dict_key, hassan_family[dict_key]), end='\n')
+
+        elif choice == 'test_dict':
+            for dict_key in test_dict.keys():
+                print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
+                print('KEY {0} value: {1} \n'.format(dict_key, test_dict[dict_key]), end='\n')
+
+        elif choice == 'razina':
+            for dict_key in razina.keys():
+                print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
+                print('KEY {0} value: {1} \n'.format(dict_key, razina[dict_key]), end='\n')
+ 
+
         else:
             print('have NOT selected correct option \n')
             sys.exit(0)
@@ -181,17 +211,32 @@ dict.update({'key': 'value'})
       
      '''   
      
+options = { '1': 'hassan_family', '2': 'maryam', 
+           '3': 'razina', '4': 'dozers', 
+           '5': 'test_dict' 
+           
+           }
+
 if __name__ == "__main__":
     
-    print('\t\u2588 We r learning about dict structure \t\u2588', end='\n\n')
-    dict_menu()
-    
+    print('\t\u2588 Lesson about dict Methods \t\u2588', end='\n\n')
+      
     try:
         
-        pick = input('Which dict u want 2 see: ')
-        option = input('Select option: ')
+        dict_menu()
+        pick_method = input('Select function: ')
         
-        iterate_keys(pick)
+        if pick_method.__eq__('E'):
+            sys.exit(0)
+        
+        dict_option()
+        which_dict = input('Select Dict: ')
+
+        if pick_method.__eq__('a'):
+            
+            check_dict(which_dict) 
+        elif pick_method == 'b':
+            iterate_keys(which_dict)
                     
     except (NameError,TypeError ) as e:
         print('Error: {0}'.format(e))
