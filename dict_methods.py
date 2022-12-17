@@ -3,6 +3,7 @@
 Created on Thu Dec  8 12:48:13 2022
 @author: admin
 @Objective: dict and its methods
+Reference: https://realpython.com/python-pass-by-reference/
 """
 import sys, json
 
@@ -21,7 +22,7 @@ hassan_family = {
                'name': 'hassan',
                'age': 33,
                'education': 'Phd',
-               'business': 'no',
+               'business': 'construction',
                'color': 'black',
                'height': '6ft 1inch'
                },
@@ -116,6 +117,7 @@ def dict_option():
     ditem += '\t\u2139 3 - razina \t\n'
     ditem += '\t\u2139 4 - dozers \t\n'
     ditem += '\t\u2139 5 - test_dict \t\n'
+    ditem += '\t\u2139 6 - options \t\n'
     print(ditem, end='\n\n')
     
 def check_dict(choice):
@@ -138,6 +140,10 @@ def check_dict(choice):
 
     elif choice == 'test_dict':
         for item1, item2 in test_dict.items():
+            print('{0} set to --> {1}'.format(item1, item2))
+            
+    elif choice == 'options':
+        for item1, item2 in options.items():
             print('{0} set to --> {1}'.format(item1, item2))
 
 def iterate_keys(choice):
@@ -166,15 +172,43 @@ def iterate_keys(choice):
             for dict_key in razina.keys():
                 print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
                 print('KEY {0} value: {1} \n'.format(dict_key, razina[dict_key]), end='\n')
+                
+        elif choice == 'options':
+           for dict_key in options.keys():
+               print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
+               print('KEY {0} value: {1} \n'.format(dict_key, options[dict_key]))
  
 
         else:
             print('have NOT selected correct option \n')
             sys.exit(0)
-            
-def dict_line(dict):
+   
+def test(**kwargs):
+    
+    print(id(kwargs))
+    print('{key} --> {value}'.format(**kwargs))
+    
+def dict_line(dicts):
     ''' this fuction also works with nested dicts '''
-    print(json.dumps(dict, indent=4))
+    if dicts.__eq__('maryam'):
+        print(json.dumps(maryam, indent=4))
+    
+    elif dicts.__eq__('hassan_family'):
+        print(json.dumps(hassan_family, indent=6))
+        
+    elif dicts.__eq__('razina'):
+        print(json.dumps(razina, indent=6))
+        
+    elif dicts.__eq__('dozers'):
+        print(json.dumps(dozers, indent=6))
+    
+    elif dicts.__eq__('test_dict'):
+        print(json.dumps(test_dict, indent=6))
+        
+    elif dicts.__eq__('options'):
+        print(json.dumps(options, indent=6))
+        
+        
     
 ''' print('\n\n\tExample #2 test_dict \t', end='\n')
 print('\t\u2588Builing dict in dict comprehension format\n') '''
@@ -208,12 +242,20 @@ dict.get(key)
 dict.clear()  -removes all items from dict
 dict.pop(key) - not found KeyError is raised
 dict.update({'key': 'value'})
-      
+
+In essence, one can say that mutable objects 
+like dictionaries, sets, and lists are passed by reference. 
+Immutable objects like int, str, tuple are passed by value.
      '''   
      
-options = { '1': 'hassan_family', '2': 'maryam', 
-           '3': 'razina', '4': 'dozers', 
-           '5': 'test_dict' 
+options = { 
+    
+   
+        'dict1': 'hassan_family', 
+        'dict2': 'maryam', 
+        'dict3': 'razina', 
+        'dict4': 'dozers', 
+        'dict5': 'test_dict' 
            
            }
 
@@ -234,9 +276,17 @@ if __name__ == "__main__":
 
         if pick_method.__eq__('a'):
             
-            check_dict(which_dict) 
+            #check_dict(which_dict)
+            
+            #print(id(which_dict))
+            #test(**which_dict)
+            check_dict(which_dict)
+            
         elif pick_method == 'b':
             iterate_keys(which_dict)
+            
+        elif pick_method == 'c':
+            dict_line(which_dict)
                     
     except (NameError,TypeError ) as e:
         print('Error: {0}'.format(e))
