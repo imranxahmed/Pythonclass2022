@@ -1,25 +1,25 @@
 [Python Introduction]
-keywords and identifiers
-statements & comments
-python idocs
-python variables
-python datatypes
-python type conversion
-python I/O and import
-Python operators
+keywords and identifiers -done
+statements & comments - done
+python idocs - done
+python variables - done
+python datatypes - done
+python type conversion - done
+python I/O and import - done
+Python operators - done
 Python namespace
 
 [Flow Control]
-Python if..else
-Python for loop
-Python while loop
-python break and continue
-python Pass
+Python if..else - done
+Python for loop - done
+Python while loop - done
+python break and continue ???
+python Pass ???
 
 [Functions]
-Python functions
-Function Arguments
-Python Recursion
+Python functions - done
+Function Arguments - done
+Python Recursion - done
 Anonymous Function
 Global, local and Nonlocal
 Python "Global" keyword
@@ -27,18 +27,17 @@ Python Modules
 Python package
 
 [Data Types]
-python Numbers
-python List
-python Tuple
-python String
-python set
-python Dictionary
+python Numbers - done
+python List - done
+python Tuple - done
+python String - done 
+python set - ???
+python Dictionary - working
 
 [Files]
 python file operation
-python dictionary
-python exception
-python exception handling
+python exception - done
+python exception handling - done
 python user-defined exception
 
 [Object & Class]
@@ -134,4 +133,3 @@ Best :O(n*logn)
 worst: O(n^2)
 ave: o(n*logn)
 best: O(n*logn)
-
