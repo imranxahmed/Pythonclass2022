@@ -17,6 +17,7 @@ test_dict = {
     }
 
 hassan_family = {
+    
            'father': { 
                
                'name': 'hassan',
@@ -102,7 +103,7 @@ def dict_menu():
     ditem = '\t\u2139 a - dict_by_items \t\n'
     ditem += '\t\u2139 b - dict_by_keys  \t\n'
     ditem += '\t\u2139 c - Dict_line -json_dump \t\n'
-    ditem += '\t\u2139 d - pop_dict \t\n'
+    ditem += '\t\u2139 d - dict_popitem LIFO \t\n'
     ditem += '\t\u2139 e - dict_get_item (key) \t\n'   
     ditem += '\t\u2139 f - dict_clear()  -removes all items from dict\t\n'
     ditem += '\t\u2139 g - dict_pop_item (key) - not found KeyError is raised\t\n'
@@ -208,10 +209,39 @@ def dict_line(dicts):
     elif dicts.__eq__('options'):
         print(json.dumps(options, indent=6))
         
+
+def item_pop(choice):
+    
+    if choice.__eq__("hassan_family"):
+        print('{0} has been popped from {1}.'.format(hassan_family.popitem(), choice))
         
+    elif choice.__eq__("maryam"):
+        print('{0} has been popped from {1}.'.format(maryam.popitem(), choice))
+    
+    elif choice.__eq__("razina"):
+        print('{0} has been popped from {1}.'.format(razina.popitem(), choice))
+        
+    elif choice.__eq__("dozers"):
+        print('{0} has been popped from {1}.'.format(dozers.popitem(), choice))
+        
+    elif choice.__eq__("test_dict"):
+        print('{0} has been popped from {1}.'.format(test_dict.popitem(), choice))
+        
+    elif choice == "options":
+        print('{0} has been popped from {1}.'.format(options.popitem(), choice))
+        
+def dict_by_item(*which_dict):
+    
+        print(which_dict)
+        #select_key = input('\n\nselect key: ')       
+        #print('KEY {0} has item: {1}'.format(select_key, which_dict.get(select_key, "Key Not Found")))
+        
+
+
+
     
 ''' print('\n\n\tExample #2 test_dict \t', end='\n')
-print('\t\u2588Builing dict in dict comprehension format\n') '''
+    print('\t\u2588Builing dict in dict comprehension format\n') '''
 
 
 glossary = {
@@ -287,6 +317,13 @@ if __name__ == "__main__":
             
         elif pick_method == 'c':
             dict_line(which_dict)
+            
+        elif pick_method == 'd':
+            item_pop(which_dict)
+            
+        elif pick_method == 'e':
+            dict_by_item(find=which_dict)
+            
                     
     except (NameError,TypeError ) as e:
         print('Error: {0}'.format(e))
