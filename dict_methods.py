@@ -3,7 +3,8 @@
 Created on Thu Dec  8 12:48:13 2022
 @author: admin
 @Objective: dict and its methods
-Reference: https://realpython.com/python-pass-by-reference/
+Ref1: https://realpython.com/python-pass-by-reference/
+Ref2: https://stackoverflow.com/questions/40796264/what-does-pythons-locals-do
 """
 import sys, json
 
@@ -122,123 +123,62 @@ def dict_option():
     print(ditem, end='\n\n')
     
 def check_dict(choice):
-    
-    if choice == 'hassan_family':
-        for item1, item2 in hassan_family.items():
-            print('{0} set to --> {1}'.format(item1, item2))
-    
-    elif choice == 'dozers':
-        for item1, item2 in dozers.items():
-            print('{0} set to --> {1}'.format(item1, item2))
-    
-    elif choice == 'maryam':
-        for item1, item2 in maryam.items():
-            print('{0} set to --> {1}'.format(item1, item2))
 
-    elif choice == 'razina':
-        for item1, item2 in razina.items():
-            print('{0} set to --> {1}'.format(item1, item2))
-
-    elif choice == 'test_dict':
-        for item1, item2 in test_dict.items():
-            print('{0} set to --> {1}'.format(item1, item2))
-            
-    elif choice == 'options':
-        for item1, item2 in options.items():
-            print('{0} set to --> {1}'.format(item1, item2))
+    for item1, item2 in choice.items():
+        print('{0} set to --> {1}'.format(item1, item2))
+    
 
 def iterate_keys(choice):
 
-        if choice == 'dozers':
-            for dict_key in dozers.keys():
+        for dict_key in choice.keys():
                 print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-                print('KEY {0} value: {1} \n'.format(dict_key, dozers[dict_key]), end='\n')
-    
-        elif choice == 'marym':
-            for dict_key in maryam.keys():
-                print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-                print('KEY {0} value: {1} \n'.format(dict_key, maryam[dict_key]), end='\n')
-    
-        elif choice == 'hassan_family':
-            for dict_key in hassan_family.keys():
-                print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-                print('KEY {0} value: {1} \n'.format(dict_key, hassan_family[dict_key]), end='\n')
-
-        elif choice == 'test_dict':
-            for dict_key in test_dict.keys():
-                print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-                print('KEY {0} value: {1} \n'.format(dict_key, test_dict[dict_key]), end='\n')
-
-        elif choice == 'razina':
-            for dict_key in razina.keys():
-                print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-                print('KEY {0} value: {1} \n'.format(dict_key, razina[dict_key]), end='\n')
-                
-        elif choice == 'options':
-           for dict_key in options.keys():
-               print('KEY in dict {0} is: \u2139{1}\u2139\n'.format(choice, dict_key), end='\n')
-               print('KEY {0} value: {1} \n'.format(dict_key, options[dict_key]))
- 
-
-        else:
-            print('have NOT selected correct option \n')
-            sys.exit(0)
-   
+                print('KEY: {0} value: {1} \n'.format(dict_key, choice[dict_key]), end='\n')
+      
 def test(**kwargs):
     
     print(id(kwargs))
     print('{key} --> {value}'.format(**kwargs))
     
 def dict_line(dicts):
+    
     ''' this fuction also works with nested dicts '''
-    if dicts.__eq__('maryam'):
-        print(json.dumps(maryam, indent=4))
+    print(json.dumps(dicts, indent=4))
     
-    elif dicts.__eq__('hassan_family'):
-        print(json.dumps(hassan_family, indent=6))
-        
-    elif dicts.__eq__('razina'):
-        print(json.dumps(razina, indent=6))
-        
-    elif dicts.__eq__('dozers'):
-        print(json.dumps(dozers, indent=6))
-    
-    elif dicts.__eq__('test_dict'):
-        print(json.dumps(test_dict, indent=6))
-        
-    elif dicts.__eq__('options'):
-        print(json.dumps(options, indent=6))
         
 
 def item_pop(choice):
+    print('{0} has been popped from {1}.'.format(choice.popitem(), choice))
+        
+        
+def dict_by_item_key(which_dict):
     
-    if choice.__eq__("hassan_family"):
-        print('{0} has been popped from {1}.'.format(hassan_family.popitem(), choice))
+        #print(type(which_dict))
+        print(which_dict.keys())
+        select_key = input('\n\nselect key: ')       
+        print('KEY {0} set to: {1}'.format(select_key, which_dict.get(select_key, "Key Not Found")))
         
-    elif choice.__eq__("maryam"):
-        print('{0} has been popped from {1}.'.format(maryam.popitem(), choice))
+def clear_a_dict(choice):
+    print('dict: {0} is cleared {1}'.format(choice, choice.clear()))
+  
+def dict_pop_by_key(choice):
     
-    elif choice.__eq__("razina"):
-        print('{0} has been popped from {1}.'.format(razina.popitem(), choice))
+    try:
         
-    elif choice.__eq__("dozers"):
-        print('{0} has been popped from {1}.'.format(dozers.popitem(), choice))
+        print('Keys: {0}'.format(choice.keys()))
+        ask_key = input('Select the key to remove: ')
+        print('current dict is:\n {0}'.format(choice), end='\n\n')
+        print('key: {0} will be removed'.format(ask_key))
         
-    elif choice.__eq__("test_dict"):
-        print('{0} has been popped from {1}.'.format(test_dict.popitem(), choice))
+        #print(choice.pop(ask_key, 'Key Not Found'))
         
-    elif choice == "options":
-        print('{0} has been popped from {1}.'.format(options.popitem(), choice))
+    except KeyError as err:
+        print('pop failed with msg: {0}'.format(err))
         
-def dict_by_item(*which_dict):
+        #print('key: {0} from dict: {1} is removed'.format(choice[ask_key]), choice, choice.pop())
     
-        print(which_dict)
-        #select_key = input('\n\nselect key: ')       
-        #print('KEY {0} has item: {1}'.format(select_key, which_dict.get(select_key, "Key Not Found")))
+def dict_search(choice):
+    try:
         
-
-
-
     
 ''' print('\n\n\tExample #2 test_dict \t', end='\n')
     print('\t\u2588Builing dict in dict comprehension format\n') '''
@@ -273,10 +213,23 @@ dict.clear()  -removes all items from dict
 dict.pop(key) - not found KeyError is raised
 dict.update({'key': 'value'})
 
-In essence, one can say that mutable objects 
-like dictionaries, sets, and lists are passed by reference. 
-Immutable objects like int, str, tuple are passed by value.
-     '''   
+In essence, one can say that mutable objects like 
+ 
+         dictionaries, 
+         sets, 
+         and lists 
+         
+         are passed by reference. 
+
+Immutable objects like 
+
+      int, 
+      str, 
+      tuple 
+      
+      are passed by value.
+    
+'''   
      
 options = { 
     
@@ -305,24 +258,25 @@ if __name__ == "__main__":
         which_dict = input('Select Dict: ')
 
         if pick_method.__eq__('a'):
+            check_dict(locals()[which_dict])
             
-            #check_dict(which_dict)
-            
-            #print(id(which_dict))
-            #test(**which_dict)
-            check_dict(which_dict)
             
         elif pick_method == 'b':
-            iterate_keys(which_dict)
-            
+            iterate_keys(locals()[which_dict])
         elif pick_method == 'c':
-            dict_line(which_dict)
-            
+            dict_line(locals()[which_dict])
         elif pick_method == 'd':
-            item_pop(which_dict)
-            
+            item_pop(locals()[which_dict])
         elif pick_method == 'e':
-            dict_by_item(find=which_dict)
+            dict_by_item_key(locals()[which_dict])    
+        elif pick_method.__eq__('f'):
+            clear_a_dict(locals()[which_dict])
+        elif pick_method.__eq__('g'):
+            dict_pop_by_key(locals()[which_dict])
+        elif pick_method.__eq__('h'):
+            dict_search(locals()[which_dict])
+        
+            
             
                     
     except (NameError,TypeError ) as e:
