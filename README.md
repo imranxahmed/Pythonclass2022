@@ -9,3 +9,5 @@
 <div>#11/12/2022 - Updated append_build_pop.py with Unicode characters</div>
 <div>#11/18/2022 - built list-comprehension.py to showcase shortest way to generate lists</div>
 <div>#12/3/2022 - built dictionary_basic_build.py to showcase dictionary data structure</div>
+<div>#1/8/2023 - built basic request to fetch URL http_services.py</div>
+<div>#1/14/2023 - built request to fetch URL using beautifulsoup module http_services.py</div>
