@@ -11,3 +11,4 @@
 <div>#12/3/2022 - built dictionary_basic_build.py to showcase dictionary data structure</div>
 <div>#1/8/2023 - built basic request to fetch URL http_services.py</div>
 <div>#1/14/2023 - built request to fetch URL using beautifulsoup module http_services.py</div>
+<div>#1/15/2023 - remove duplicates from a list remove_duplicates_list.py</div>
