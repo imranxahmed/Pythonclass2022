@@ -1,6 +1,6 @@
 # Pythonclass2022
 
-`#This are working notes from python class done in 2022
+#This are working notes from python class done in 2022
 <div>#10/1/2022 - Class #1 talked about getting user input and printing output</div>
 <div>#10/2/2022 - Build a function and compare input using multiple if..then..else construct</div>
 <div>#10/8/2022 - Build a list with try..except and break construct</div>
@@ -12,3 +12,4 @@
 <div>#1/8/2023 - built basic request to fetch URL http_services.py</div>
 <div>#1/14/2023 - built request to fetch URL using beautifulsoup module http_services.py</div>
 <div>#1/15/2023 - remove duplicates from a list remove_duplicates_list.py</div>
+<div><p>#1/16/2023 - build script to read write files file_operation_1.py</p></div>
