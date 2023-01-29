@@ -12,5 +12,5 @@
 <div>#1/8/2023 - built basic request to fetch URL http_services.py</div>
 <div>#1/14/2023 - built request to fetch URL using beautifulsoup module http_services.py</div>
 <div>#1/15/2023 - remove duplicates from a list remove_duplicates_list.py</div>
-<div><p>#1/16/2023 - build script to read write files file_operation_1.py</p></div>
-<li><br>1/29/2023 - added prayer reminder by Miraj prayer_time1.py</br></li>
+<div>#1/16/2023 - build script to read write files file_operation_1.py</div>
+<li>1/29/2023 - added prayer reminder by Miraj prayer_time1.py</li>
