@@ -1,6 +1,6 @@
 # Pythonclass2022
 
-#This are working notes from python class done in 2022
+<html><head>#This are working notes from python class done in 2022</head></html>
 <li><div>#10/1/2022 - Class #1 talked about getting user input and printing output</div></li>
 <li><div>#10/2/2022 - Build a function and compare input using multiple if..then..else construct</div></li>
 <div>#10/8/2022 - Build a list with try..except and break construct</div>
